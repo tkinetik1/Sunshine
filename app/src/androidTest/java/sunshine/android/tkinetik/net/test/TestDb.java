@@ -13,17 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.example.android.sunshine.app.test;
 
-import android.content.ContentValues;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.test.AndroidTestCase;
-import android.util.Log;
-
+import com.example.android.sunshine.app.data.WeatherContract.LocationEntry;
+import com.example.android.sunshine.app.data.WeatherContract.WeatherEntry;
 import com.example.android.sunshine.app.data.WeatherDbHelper;
-
-import java.util.Map;
-import java.util.Set;
 
 public class TestDb extends AndroidTestCase {
 
@@ -39,7 +35,7 @@ public class TestDb extends AndroidTestCase {
 
     /* TODO Uncomment for
     4a - JUnit testing
-    https://www.udacity.com/course/viewer#!/c-ud853/l-1639338560/m-1633698603*/
+    https://www.udacity.com/course/viewer#!/c-ud853/l-1639338560/m-1633698603
     public void testInsertReadDb() {
 
         // Test data we're going to insert into the DB to see if it works.
@@ -142,14 +138,13 @@ public class TestDb extends AndroidTestCase {
         /* TODO Uncomment for
         4a - JUnit testing
         https://www.udacity.com/course/viewer#!/c-ud853/l-1639338560/m-1633698603
-        **/
         dbHelper.close();
     }
-
+    */
 
     /* TODO Uncomment for
     4a - Simplify Tests
-    https://www.udacity.com/course/viewer#!/c-ud853/l-1639338560/e-1633698607/m-1615128666 */
+    https://www.udacity.com/course/viewer#!/c-ud853/l-1639338560/e-1633698607/m-1615128666
     static ContentValues createWeatherValues(long locationRowId) {
         ContentValues weatherValues = new ContentValues();
         weatherValues.put(WeatherEntry.COLUMN_LOC_KEY, locationRowId);
