@@ -1,6 +1,5 @@
-Sunshine
-========
+1/8/2015
 
-Udacity's "Developing Android Apps" project "Sunshine": A weather app using textviews,listviews,adapters,json, openweathermap.org api.
+origin master: reset to beginning of 4a - new test and weathercontract java files.
 
-Developed by Tyson Frederick. 1/2/14 *readme updated*
+Still need to complete UI based on wireframes and mockups.  Located in this directory as a .pdf.
