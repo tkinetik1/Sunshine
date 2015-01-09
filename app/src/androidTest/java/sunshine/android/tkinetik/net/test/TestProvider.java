@@ -19,9 +19,12 @@ package sunshine.android.tkinetik.net.test;
  * limitations under the License.
  */
 
+import android.annotation.TargetApi;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
+import android.os.Build;
 import android.test.AndroidTestCase;
 import android.util.Log;
 
@@ -83,8 +86,9 @@ public class TestProvider extends AndroidTestCase {
         // Fantastic.  Now that we have a location, add some weather!
         ContentValues weatherValues = TestDb.createWeatherValues(locationRowId);
 
-        long weatherRowId = db.insert(WeatherEntry.TABLE_NAME, null, weatherValues);
-        assertTrue(weatherRowId != -1);
+        Uri weatherInsertUri = mContext.getContentResolver()
+                .insert(WeatherEntry.CONTENT_URI, weatherValues);
+        assertTrue(weatherInsertUri != null);
 
         // A cursor is your primary interface to the query results.
         Cursor weatherCursor = mContext.getContentResolver().query(
@@ -95,6 +99,16 @@ public class TestProvider extends AndroidTestCase {
                 null // columns to group by
         );
 
+        TestDb.validateCursor(weatherCursor, weatherValues);
+
+        // Get the joined Weather data for a specific date
+        weatherCursor = mContext.getContentResolver().query(
+                WeatherEntry.buildWeatherLocationWithDate(TestDb.TEST_LOCATION, TestDb.TEST_DATE),
+                null,
+                null,
+                null,
+                null
+        );
         TestDb.validateCursor(weatherCursor, weatherValues);
 
         dbHelper.close();
@@ -129,5 +143,14 @@ public class TestProvider extends AndroidTestCase {
         type = mContext.getContentResolver().getType(LocationEntry.buildLocationUri(1L));
         // vnd.android.cursor.item/com.example.android.sunshine.app/location
         assertEquals(LocationEntry.CONTENT_ITEM_TYPE, type);
+    }
+
+    // The target api annotation is needed for the call to keySet -- we wouldn't want
+    // to use this in our app, but in a test it's fine to assume a higher target.
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    void addAllContentValues(ContentValues destination, ContentValues source) {
+        for (String key : source.keySet()) {
+            destination.put(key, source.getAsString(key));
+        }
     }
 }
