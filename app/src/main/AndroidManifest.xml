@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="sunshine.android.tkinetik.net.sunshine" >
+
     //added permission - starts with ..."android.permission.INTENDEDPERMISSION
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -34,6 +35,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="sunshine.android.tkinetik.net.sunshine.MainActivity" />
         </activity>
+        <provider
+            android:authorities="sunshine.android.tkinetik.net.sunshine"
+            android:name=".data.WeatherProvider"
+        />
     </application>
 
 </manifest>

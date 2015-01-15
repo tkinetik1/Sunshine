@@ -15,7 +15,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-
 public class DetailActivity extends ActionBarActivity {
 
     @Override
@@ -44,7 +43,7 @@ public class DetailActivity extends ActionBarActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
-            startActivity(new Intent(this, sunshine.android.tkinetik.net.sunshine.SettingsActivity.class));
+            startActivity(new Intent(this, SettingsActivity.class));
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -69,12 +68,11 @@ public class DetailActivity extends ActionBarActivity {
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_detail, container, false);
 
-            //The detail Activity called via an intent  Inspect the Intent for forecast data.
+            // The detail Activity called via intent.  Inspect the intent for forecast data.
             Intent intent = getActivity().getIntent();
-
             if (intent != null && intent.hasExtra(Intent.EXTRA_TEXT)) {
                 mForecastStr = intent.getStringExtra(Intent.EXTRA_TEXT);
-                ((TextView) rootView.findViewById(R.id.detail_text))
+                ((TextView) rootView.findViewById(R.id.detail_forecast_textview))
                         .setText(mForecastStr);
             }
 
@@ -86,10 +84,10 @@ public class DetailActivity extends ActionBarActivity {
             // Inflate the menu; this adds items to the action bar if it is present.
             inflater.inflate(R.menu.detailfragment, menu);
 
-            //Retrieve the share menu item
+            // Retrieve the share menu item
             MenuItem menuItem = menu.findItem(R.id.action_share);
 
-            //Get the provider and hold on to it to set/change the share intent.
+            // Get the provider and hold onto it to set/change the share intent.
             ShareActionProvider mShareActionProvider =
                     (ShareActionProvider) MenuItemCompat.getActionProvider(menuItem);
 
