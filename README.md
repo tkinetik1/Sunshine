@@ -1,5 +1,14 @@
-1/8/2015
+By Tyson Frederick
+  in coordination with Udacity's "Developing Android Apps".
 
-origin master: reset to beginning of 4a - new test and weathercontract java files.
+1/14/15 Sunshine Readme - Progress - origin master: Finished 4.38
 
-Still need to complete UI based on wireframes and mockups.  Located in this directory as a .pdf.
+  Finished 1: Create Project Sunshine
+  Finished 2: Connect Sunshine to the Cloud
+  Finished 3: New Activities and Intents
+  Finished 4a:LifeCycles and Databases.
+  Finished 4b: Content Provider and Loaders.
+
+Starting section of Weather App 1/14/15 . Section 5 - Rich and Responsive Layouts
+Still need to complete UI based on wireframes and mockups, which are located in this directory.  
+
