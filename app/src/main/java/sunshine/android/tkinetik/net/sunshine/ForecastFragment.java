@@ -21,6 +21,7 @@ import java.util.Date;
 import sunshine.android.tkinetik.net.sunshine.data.WeatherContract;
 import sunshine.android.tkinetik.net.sunshine.data.WeatherContract.LocationEntry;
 import sunshine.android.tkinetik.net.sunshine.data.WeatherContract.WeatherEntry;
+import sunshine.android.tkinetik.net.sunshine.sync.SunshineSyncAdapter;
 
 /**
  * Encapsulates fetching the forecast and displaying it as a {@link android.widget.ListView} layout.
@@ -155,10 +156,9 @@ public class ForecastFragment extends Fragment implements LoaderCallbacks<Cursor
         super.onActivityCreated(savedInstanceState);
     }
 
-    // Refactor updateWeather to a helper method.
+
     private void updateWeather() {
-        String location = Utility.getPreferredLocation(getActivity());
-        new FetchWeatherTask(getActivity()).execute(location);
+        SunshineSyncAdapter.syncImmediately(getActivity());
     }
 
     @Override

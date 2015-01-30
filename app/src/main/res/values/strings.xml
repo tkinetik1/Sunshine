@@ -95,6 +95,7 @@
         A high of <xliff:g id="high">%3$s</xliff:g> and low of
         <xliff:g id="low">%4$s</xliff:g></string>
     <!-- SyncAdapter related -->
-    <string name="sync_account_type">example.com</string>
-    <string name="sync_authority">"com.example.android.sunshine.app"</string>
+    <string name="sync_account_type">sunshine.example.com</string>
+    <string name="content_authority">"com.example.android.sunshine.app"</string>
+
 </resources>
