@@ -3,6 +3,7 @@ package sunshine.android.tkinetik.net.sunshine.sync;
 /**
  * Created by tkinetik1 on 1/28/15.
  */
+
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;

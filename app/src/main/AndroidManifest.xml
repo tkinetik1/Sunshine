@@ -45,7 +45,7 @@
                 android:value="sunshine.android.tkinetik.net.sunshine.MainActivity" />
         </activity>
         <provider
-            android:authorities="sunshine.android.tkinetik.net.sunshine"
+            android:authorities="@string/content_authority"
             android:name=".data.WeatherProvider"
             android:exported="false"
             android:syncable="true" />
