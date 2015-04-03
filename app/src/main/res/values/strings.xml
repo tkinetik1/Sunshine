@@ -6,7 +6,7 @@
         It's to keep this short, so your launcher icon isn't displayed with "The greatest Wea"
         or something similar.
     -->
-    <string name="app_name">Sunshine</string>
+    <string name="app_name">Sunshine Weather Deep Blue</string>
 
     <!--
          By convention, "action" denotes that this String will be used as the label for an Action,
@@ -51,10 +51,10 @@
     <string name="pref_units_label">Temperature Units</string>
 
     <!-- Label for metric option in temperature unit preference [CHAR LIMIT=25] -->
-    <string name="pref_units_label_metric">Metric</string>
+    <string name="pref_units_label_metric">Celsius</string>
 
     <!-- Label for imperial option in temperature unit preference [CHAR LIMIT=25] -->
-    <string name="pref_units_label_imperial">Imperial</string>
+    <string name="pref_units_label_imperial">Fahrenheit</string>
 
     <!-- Key name for temperature unit preference in SharedPreferences [CHAR LIMIT=NONE] -->
     <string name="pref_units_key" translatable="false">units</string>
